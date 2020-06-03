@@ -1256,6 +1256,7 @@ CELERY_TASK_ROUTES = {
 LOGGING = {
     'version': 1,
     'filters': {},
+    'disable_existing_loggers': False,
     'formatters': {
         'json': {
             '()': olympia.core.logger.JsonFormatter,
@@ -1356,6 +1357,11 @@ LOGGING = {
             'handlers': ['mozlog'],
             'level': logging.WARNING,
             'propagate': False
+        },
+        'z': {
+            'handlers': ['mozlog'],
+            'level': logging.INFO,
+            'propagate': True
         },
         'z.celery': {
             'handlers': ['statsd'],
