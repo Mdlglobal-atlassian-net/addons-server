@@ -25,6 +25,8 @@ INSTALLED_APPS += (
 LOGGING['root']['level'] = logging.DEBUG
 for logger in list(LOGGING['loggers'].keys()):
     if logger not in ['filtercascade', 'mohawk.util', 'post_request_task']:
+        # It is important to keep the loggers configured in `settings_base.py`
+        # so we only update the level below:
         LOGGING['loggers'][logger]['level'] = logging.DEBUG
 
 # django-debug-doolbar middleware needs to be inserted as high as possible
