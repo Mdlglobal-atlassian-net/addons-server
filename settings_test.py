@@ -71,7 +71,7 @@ LOGGING['loggers'] = {
     '': {
         'handlers': ['null'],
         'level': logging.DEBUG,
-        'propogate': False,
+        'propagate': False,
     },
     # Need to disable celery logging explicitly. Celery configures it's
     # logging manually and we don't catch their logger in our default config.
